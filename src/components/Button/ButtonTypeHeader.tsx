@@ -1,18 +1,18 @@
 import React from 'react';
 
-interface ButtonTypeClassProps {
+interface ButtonTypeHeaderProps {
     value: number;
-    currentTypeClass: number;
-    handleTypeClass: (value: number) => void;
+    currentType: number;
+    handleType: (value: number) => void;
     label: string;
 }
 
-const ButtonTypeClass: React.FC<ButtonTypeClassProps> = ({ value, currentTypeClass, handleTypeClass, label }) => {
+const ButtonTypeHeader: React.FC<ButtonTypeHeaderProps> = ({ value, currentType, handleType, label }) => {
     return (
         <div
-            onClick={() => handleTypeClass(value)}
+            onClick={() => handleType(value)}
             className={`w-[9%] h-full rounded-tl-lg rounded-tr-lg text-lg font-bold font-Mulish tracking-tight px-[5px] py-2 flex items-center justify-center text-center cursor-pointer ${
-                currentTypeClass === value
+                currentType === value
                     ? 'bg-gradient-to-l from-[#ff5400] to-[#f17f21] text-[#f2f2f2]'
                     : 'bg-[white] border border-[#ff5400] text-[#373839]'
             }`}
@@ -22,4 +22,4 @@ const ButtonTypeClass: React.FC<ButtonTypeClassProps> = ({ value, currentTypeCla
     );
 };
 
-export default ButtonTypeClass;
+export default ButtonTypeHeader;

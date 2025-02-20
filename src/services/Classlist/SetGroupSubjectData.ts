@@ -21,11 +21,11 @@ interface SubjectGroupData {
 }
 
 interface SetGroupSubjectDataProps {
-    e: string;
-    setGroupSubject: (groupSubject: string) => void;
-    setArrSubject: (subjects: string[]) => void;
-    setSubject: (subjectName: string) => void;
-    setClasses: (classes: string[]) => void;
+    e?: string;
+    setGroupSubject?: (groupSubject: string) => void;
+    setArrSubject?: (subjects: string[]) => void;
+    setSubject?: (subjectName: string) => void;
+    setClasses?: (classes: string[]) => void;
 }
 
 const SetGroupSubjectData = async ({
@@ -47,7 +47,9 @@ const SetGroupSubjectData = async ({
                 const group = subjectGroupData[groupKey];
 
                 if (group.name === e) {
-                    setGroupSubject(`${group.level} - ${group.name}`);
+                    if (setGroupSubject) {
+                        setGroupSubject(`${group.level} - ${group.name}`);
+                    }
 
                     const subjects = [
                         group.Subject.Subject1.name,
@@ -55,9 +57,17 @@ const SetGroupSubjectData = async ({
                         group.Subject.Subject3.name,
                     ];
 
-                    setArrSubject(subjects);
-                    setSubject(group.Subject.Subject1.name);
-                    setClasses(group.Subject.Subject1.classes);
+                    if (setArrSubject) {
+                        setArrSubject(subjects);
+                    }
+
+                    if (setSubject) {
+                        setSubject(group.Subject.Subject1.name);
+                    }
+
+                    if (setClasses) {
+                        setClasses(group.Subject.Subject1.classes);
+                    }
                 }
             });
         } else {
