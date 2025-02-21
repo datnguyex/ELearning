@@ -51,8 +51,8 @@
     "scripts": {
         "dev:css": "NODE_ENV=development postcss tailwind.css -o /src/tailwind.css -w",
         "start": "react-app-rewired start",
-        "build": "CI=false react-app-rewired build",
-        "test": "react-app-rewired test --passWithNoTests",
+        "build": "react-app-rewired build",
+        "test": "react-app-rewired test",
         "eject": "react-app-rewired eject"
     },
     "eslintConfig": {
@@ -84,6 +84,7 @@
         "@types/redux-persist": "^4.3.1",
         "autoprefixer": "^10.4.20",
         "babel-plugin-module-resolver": "^5.0.2",
+        "gh-pages": "^6.3.0",
         "husky": "^9.1.7",
         "lint-staged": "^15.3.0",
         "postcss": "^8.4.49",
