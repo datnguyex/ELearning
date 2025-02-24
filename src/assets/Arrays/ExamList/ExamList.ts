@@ -1,5 +1,4 @@
 import React from 'react';
-import { DoubleArrow } from '~/assets/Icons/Icons';
 
 // headers.js
 export const headersTable = (iconProps: React.ReactNode) => [
